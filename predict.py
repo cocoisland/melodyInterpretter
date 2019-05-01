@@ -118,7 +118,7 @@ def create_midi(prediction_output):
             new_chord.offset = offset
             output_notes.append(new_chord)
         # pattern is a note
-        elif ('_' in pattern):
+        elif (':' in pattern):
             pitch = pattern.split(':')[0]
             velocity = pattern.split(':')[1]
             new_note = note.Note(pitch)
