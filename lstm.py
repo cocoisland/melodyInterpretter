@@ -44,7 +44,7 @@ def get_notes():
 
         for element in notes_to_parse:
             if isinstance(element, note.Note):
-                notes.append('-'.join([str(element.pitch),str(element.volume.velocity)]))
+                notes.append(':'.join([str(element.pitch),str(element.volume.velocity)]))
             elif isinstance(element, chord.Chord):
                 notes.append('.'.join(str(n) for n in element.normalOrder))
 
@@ -96,7 +96,7 @@ def create_network(network_input, n_vocab):
     model.add(LSTM(512, return_sequences=True))
     model.add(Dropout(0.3))
     model.add(LSTM(512))
-    model.add(Dense(512))
+    model.add(Dense(256))
     model.add(Dropout(0.3))
     model.add(Dense(n_vocab))
     model.add(Activation('softmax'))
