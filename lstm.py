@@ -29,7 +29,7 @@ def get_notes():
     """ Get all the notes and chords from the midi files in the ./midi_songs directory """
     notes = []
 
-    for file in glob.glob("midi/chopin/b*.mid"):
+    for file in glob.glob("midi/chopin/*.mid"):
         midi = converter.parse(file)
 
         print("Parsing %s" % file)
@@ -44,6 +44,7 @@ def get_notes():
 
         for element in notes_to_parse:
             if isinstance(element, note.Note):
+                #notes.append(str(element.pitch))
                 notes.append(':'.join([str(element.pitch),str(element.volume.velocity)]))
             elif isinstance(element, chord.Chord):
                 notes.append('.'.join(str(n) for n in element.normalOrder))
@@ -88,14 +89,14 @@ def create_network(network_input, n_vocab):
     """ create the structure of the neural network """
     model = Sequential()
     model.add(LSTM(
-        512,
+        256,
         input_shape=(network_input.shape[1], network_input.shape[2]),
         return_sequences=True
     ))
     model.add(Dropout(0.3))
-    model.add(LSTM(512, return_sequences=True))
+    model.add(LSTM(256, return_sequences=True))
     model.add(Dropout(0.3))
-    model.add(LSTM(512))
+    model.add(LSTM(256))
     model.add(Dense(256))
     model.add(Dropout(0.3))
     model.add(Dense(n_vocab))
@@ -116,7 +117,7 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=5, batch_size=64, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=200, batch_size=64, callbacks=callbacks_list)
 
 if __name__ == '__main__':
     train_network()

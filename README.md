@@ -1,38 +1,10 @@
 # Classical Piano Composer
 
-This project allows you to train a neural network to generate midi music files that make use of a single instrument
+This project is able to train model and output midi with polytonic pitch and velocity. By trial and error, it is found that using hidden layer LSTM 512 would cause the model training to get stuck at local minima with loss unable to get down to 1. By using hidden layer LSTM 256 and no dropout, the training model is able to get past local minima to achieve min loss.
 
-## Requirements
-
-* Python 3.x
-* Installing the following packages using pip:
-	* Music21
-	* Keras
-	* Tensorflow
-	* h5py
-
-## Training
-
-To train the network you run **lstm.py**.
-
-E.g.
-
-```
+Usage:
+source classic_venv/bin/activate
 python lstm.py
-```
-
-The network will use every midi file in ./midi_songs to train the network. The midi files should only contain a single instrument to get the most out of the training.
-
-**NOTE**: You can stop the process at any point in time and the weights from the latest completed epoch will be available for text generation purposes.
-
-## Generating music
-
-Once you have trained the network you can generate text using **predict.py**
-
-E.g.
-
-```
+cp latest_weights to weights.hdf5
 python predict.py
-```
-
-You can run the prediction file right away using the **weights.hdf5** file
+python testout.py

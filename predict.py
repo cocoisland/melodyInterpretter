@@ -52,14 +52,14 @@ def create_network(network_input, n_vocab):
     """ create the structure of the neural network """
     model = Sequential()
     model.add(LSTM(
-        512,
+        256,
         input_shape=(network_input.shape[1], network_input.shape[2]),
         return_sequences=True
     ))
     model.add(Dropout(0.3))
-    model.add(LSTM(512, return_sequences=True))
+    model.add(LSTM(256, return_sequences=True))
     model.add(Dropout(0.3))
-    model.add(LSTM(512))
+    model.add(LSTM(256))
     model.add(Dense(256))
     model.add(Dropout(0.3))
     model.add(Dense(n_vocab))
@@ -82,8 +82,8 @@ def generate_notes(model, network_input, pitchnames, n_vocab):
     prediction_output = []
 
     # generate 500 notes
-    for note_index in range(500):
-        pattern = network_input[start+note_index]
+    for note_index in range(50):
+        pattern = network_input[100+note_index]
         prediction_input = numpy.reshape(pattern, (1, len(pattern), 1))
         prediction_input = prediction_input / float(n_vocab)
 
@@ -122,7 +122,7 @@ def create_midi(prediction_output):
             pitch = pattern.split(':')[0]
             velocity = pattern.split(':')[1]
             new_note = note.Note(pitch)
-            new_note.volume.velocity = velocity
+            new_note.volume.velocity = int(velocity)
             output_notes.append(new_note)
         else:
             new_note = note.Note(pattern)
