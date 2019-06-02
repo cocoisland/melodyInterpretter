@@ -15,6 +15,10 @@ const About = () => {
             </h4>
             <div className="about-images">
               <div>
+                <p>Blake Fletcher</p> 
+                <img src={require('./img/blake.jpeg')} alt="pic of a" width='170px'/>
+              </div>
+              <div>
                 <p>A Apte</p> 
                 <img src={require('./img/aapte.png')} alt="pic of a" width='170px'/>
               </div>
