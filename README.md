@@ -6,5 +6,5 @@ The frontend, Front-End, was written in React. It consists of a Generator page a
 !["Generator page"](https://github.com/cocoisland/melodyInterpretter/blob/master/generator.jpg)
 
 The backend, DS, was written in python using Keras deep neural network library. To learn more about the backend DS, please read the README in the DS directory.
-
+!["Library page"](https://github.com/cocoisland/melodyInterpretter/blob/master/library.jpg)
 
