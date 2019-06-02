@@ -51,12 +51,13 @@ def get_notes(artist, style):
             elif isinstance(element, chord.Chord):
                 notes.append('.'.join(str(n) for n in element.normalOrder))
 
+
     with open('data/notes', 'wb') as filepath:
         pickle.dump(notes, filepath)
     '''
     pickle_in = open("notes/{}_{}_notes.pickle".format(artist, style),"rb")
     notes = pickle.load(pickle_in)
-
+    
 
     return notes
 
