@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f206bbdf.chunk.css",
+    "main.js": "/static/js/main.d9a23a96.chunk.js",
+    "main.js.map": "/static/js/main.d9a23a96.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.d7346376.chunk.css": "/static/css/2.d7346376.chunk.css",
+    "static/js/2.21cbe2cb.chunk.js": "/static/js/2.21cbe2cb.chunk.js",
+    "static/js/2.21cbe2cb.chunk.js.map": "/static/js/2.21cbe2cb.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b6c81612f8a7084542106a980e6faf13.js": "/precache-manifest.b6c81612f8a7084542106a980e6faf13.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.d7346376.chunk.css.map": "/static/css/2.d7346376.chunk.css.map",
+    "static/css/main.f206bbdf.chunk.css.map": "/static/css/main.f206bbdf.chunk.css.map",
+    "static/media/aapte.png": "/static/media/aapte.9fcb606f.png",
+    "static/media/jsolis.png": "/static/media/jsolis.d23c9804.png",
+    "static/media/ttia.png": "/static/media/ttia.f98eba7d.png"
+  }
+}
