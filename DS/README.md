@@ -18,3 +18,7 @@ By default the model parsed input midi file, extracted the pitch attributes of t
 3. cp latest_weights to weights.hdf5
 4. python predict.py
 5. python testout.py
+
+
+Contributors:
+A Apte Joshua Solis Tony Tia
