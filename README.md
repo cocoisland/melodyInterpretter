@@ -14,5 +14,6 @@ The backend, DS, was written in python using Keras deep neural network library. 
 
 ### Contributors:
 Data Scientists: A Apte, Joshua Solis, Tony Tia
+
 Project Manager: Blake Fletcher
 
